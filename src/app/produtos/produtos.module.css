@@ -1,0 +1,23 @@
+.conteudo {
+  h2::before {
+    content: "🎁 ";
+  }
+
+  article {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: var(--borda-arredondada);
+  }
+
+  @media screen and (min-width: 800px) {
+    .produtos {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      article {
+        width: 30%;
+      }
+    }
+  }
+}

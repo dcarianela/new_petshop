@@ -1,0 +1,92 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Variáveis CSS */
+:root {
+  --cor-primaria-fundo: #0b0a3f;
+  --cor-primaria-fundo-hover: #030226;
+
+  --cor-primaria: #f2f2f2;
+  --cor-primaria-hover: #ebebeb;
+
+  --cor-secundaria-fundo: #4ba3c3;
+  --cor-secundaria-fundo-hover: #2f88a8;
+
+  --cor-secundaria: #e4e3f2;
+  --cor-secundaria-hover: #e2e2eb;
+
+  --sombra-box: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --borda-arredondada: 0.5rem;
+}
+
+/* Definindo o tamanho padrão para 1rem (equivale a 16px) */
+html {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-roboto), sans-serif;
+
+  /* Propriedades recomendadas para
+  minimizar a chance de serrilhamento de fontes
+  em certos navegadores/dispositivos */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #ededf7;
+}
+
+h1,
+h2,
+h3,
+button {
+  font-family: var(--font-fjalla), sans-serif;
+}
+
+h2 {
+  margin: 1rem 0;
+  color: #262626;
+  background-color: #f7f7f7;
+  padding: 1rem;
+  box-shadow: var(--sombra-box);
+  border-radius: var(--borda-arredondada);
+}
+
+.limitador {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  margin: 0.5rem 0;
+}
+
+p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--cor-primaria-fundo-hover);
+  text-decoration: underline;
+}

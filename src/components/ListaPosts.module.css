@@ -1,0 +1,51 @@
+.posts {
+  article {
+    padding: 1rem;
+    background-color: #f7f7f7;
+    box-shadow: var(--sombra-box);
+    border-radius: var(--borda-arredondada);
+    margin-bottom: 1rem;
+    transition: transform 300ms;
+  }
+
+  a {
+    text-decoration: none;
+    color: #0c0c0d;
+  }
+
+  a:hover,
+  a:focus {
+    color: #2320c9;
+  }
+
+  /* Quando um link contido no article/post receber foco do teclado,
+transformará o link em um botão com destaque.
+    O :focus-visible é um seletor CSS que aplica estilos apenas quando o elemento recebe foco
+de teclado, evitando que o estilo seja aplicado quando o elemento é focado com o mouse.
+    */
+  a:focus-visible {
+    outline-color: var(--cor-secundaria);
+    outline-width: 1px;
+    outline-offset: 10px;
+  }
+
+  /* Quando um link contido no article/post receber foco do teclado,
+também acionará a transformação.
+
+O :has() permite selecionar um elemento com base na existência de um seletor dentro dele. O > é um seletor de filho direto em CSS. Portanto, a ideia por trás de article:has(> a:focus) seria selecionar um elemento <article> que contém um elemento <a> focado dentro dele. */
+  article:has(> a:focus),
+  article:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  @media screen and (min-width: 500px) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    article {
+      width: 49%;
+    }
+  }
+}
