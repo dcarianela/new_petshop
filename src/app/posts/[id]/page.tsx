@@ -15,11 +15,16 @@ async function buscarPostPorId(id: string): Promise<Post> {
     .eq("id", id)
     .single<Post>();
 
-  if (error) {
-    throw new Error("aaaa");
+  /* Esse PGRST116 é um código interno da API Postgree usado pelo Supabase. Na prática, indica que se a query single não retornar nenhum item, ou seja, zero resultados, ele dispara esse código e com isso chamamos a função notFound (que por sua vez carrega a page not-found.tsx). */
+  if (error?.code === "PGRST116") {
+    notFound();
   }
 
-  const post: Post = [];
+  if (error) {
+    throw new Error("Erro ao buscar post: " + error.message);
+  }
+
+  const post: Post = data;
   return post;
 }
 
